@@ -1,0 +1,15 @@
+install Python 3.11.x
+ 
+# Create virtual Env
+python -m venv .venv
+ 
+# Activate virtual env
+.venv\Scripts\activate
+ 
+# Install dependencies
+pip install flask
+pip install torch
+pip install transformers
+ 
+# to run the flask app
+flask --app app run
