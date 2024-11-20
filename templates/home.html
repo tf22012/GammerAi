@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="/static/images/nscc-test.jpg" alt="Test Image NSCC Icon" />
-    <h2>Input Text</h2>
-    <p>{{ input_text }}</p>
-    
-    <h2>Output Text</h2>
-    <p>{{ edited_text }}</p>
+    <h2>Input Some Text</h2>
+
+    <form method="post">
+        <input name="input_text" type="text" value="{{ input_text }}">
+        <button>Submit</button>
+    </form>
+
+    {% if edited_text %}
+        <h2>Output Text</h2>
+        <p>{{ edited_text }}</p>
+    {% endif %}
+
 </body>
 </html>
