@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+
         <h1 class="display-1">GrammerAi</h1>
 
         <!-- Output text section appears if there's edited text -->
@@ -17,8 +18,10 @@
             {% if edited_text %}
             <textarea 
                 name="edited_text" 
-                class="rounded w-75"
-                style="overflow-y: auto; max-height: auto;">{{ edited_text }}</textarea>
+                class="rounded w-75 p-3"
+                style="overflow-y: auto; max-height: auto; background-color: whitesmoke;"
+                readonly>{{ edited_text }}
+            </textarea>
             {% endif %}
         </div>
 
@@ -35,6 +38,7 @@
                 </div>
             </form>
         </div>
+
     </div>
 </body>
 </html>
