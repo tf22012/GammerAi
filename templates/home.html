@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/styles.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h2>Input Some Text</h2>
+    <div class="container">
+        <h1 class="display-1">GrammerAi</h1>
 
-    <form method="post">
-        <input name="input_text" type="text" value="{{ input_text }}">
-        <button>Submit</button>
-    </form>
+        <!-- Output text section appears if there's edited text -->
+        <div class="d-flex justify-content-center content">
+            {% if edited_text %}
+            <textarea 
+                name="edited_text" 
+                class="rounded w-75"
+                style="overflow-y: auto; max-height: auto;">{{ edited_text }}</textarea>
+            {% endif %}
+        </div>
 
-    {% if edited_text %}
-        <h2>Output Text</h2>
-        <p>{{ edited_text }}</p>
-    {% endif %}
-
+        <!-- Form container at the bottom of the page -->
+        <div class="d-flex justify-content-center form-container">
+            <form method="post" class="w-75">
+                <div class="input-group">
+                    <textarea 
+                        name="input_text" 
+                        placeholder="Please enter your text here" 
+                        class="form-control rounded-start"
+                        style="overflow-y: auto; max-height: 100px;"></textarea>
+                    <button class="btn btn-secondary rounded-end">↑</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
